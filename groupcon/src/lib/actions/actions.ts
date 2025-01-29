@@ -4,6 +4,8 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
 import { createClient } from '@/lib/supabase/createClient/server'
+import { cookies } from 'next/headers'
+
 
 export async function login(formData: FormData) {
   const supabase = await createClient()
@@ -45,3 +47,26 @@ export async function signup(formData: FormData) {
   redirect('/dashboard')
 
 }
+
+
+export async function signOut() {
+  const supabase = await createClient()
+
+  const { error } = await supabase.auth.signOut()
+  redirect('/')
+
+
+}
+
+export async function getUserId () {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase.auth.getUser()
+  if (error || !data?.user) {
+      redirect('/auth/login')
+  }
+
+  return data.user.id
+
+}
+

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/auth-helpers-react": "^0.5.0",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.48.1",
     "formidable": "^3.5.2",
@@ -16,6 +17,8 @@
     "pg": "^8.13.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-file-viewer": "^1.2.1",
+    "server-only": "^0.0.1",
     "uuid": "^11.0.5"
   },
   "devDependencies": {

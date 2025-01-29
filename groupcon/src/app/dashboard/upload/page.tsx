@@ -1,11 +1,15 @@
 import React from 'react'
+import FileUpload from '@/components/upload'
+
 
 function page() {
   return (
-    <div>
-      upload
-    </div>
+    <main>
+      <FileUpload />
+    </main>
   )
 }
 
 export default page
+
+
